@@ -14,17 +14,19 @@ The purpose of the Catering database is to:
 - Collect and analyze customer reviews
 
 ### ERD (Entity Relationship Diagram)
-![ERD Diagram](Phase1/ERDAndDSTFiles/ERD.png)
+![image](https://github.com/user-attachments/assets/faf7104d-55e3-42c1-9c1a-75708acb41e3)
+
 
 ### DSD (Data Structure Diagram)
-![DSD Diagram](Phase1/ERDAndDSTFiles/DSD.png)
+![image](https://github.com/user-attachments/assets/13f1b4e1-6cca-4117-9198-02d69b9f4398)
+
 
 ### SQL Scripts
 The following scripts are provided for interacting with the database:
-- 📜 [create_tables.sql](Phase1/scripts/create_tables.sql) – Create database tables
-- 📜 [insert_tables.sql](Phase1/scripts/insert_tables.sql) – Insert sample data
-- 📜 [drop_tables.sql](Phase1/scripts/drop_tables.sql) – Drop all tables
-- 📜 [selectAll_tables.sql](Phase1/scripts/selectAll_tables.sql) – Select data from all tables
+- 📜 [create_tables.sql](Phase1/scripts/create_tables_user.sql) – Create database tables
+- 📜 [insert_tables.sql](Phase1/scripts/insert_tables_fixed.sql) – Insert sample data
+- 📜 [drop_tables.sql](Phase1/scripts/drop_tables_no_cascade.sql) – Drop all tables
+- 📜 [selectAll_tables.sql](Phase1/scripts/selectAll_tables_structured.sql) – Select data from all tables
 
 
 ### Backup
