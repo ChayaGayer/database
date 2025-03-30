@@ -1,4 +1,4 @@
-# database
+
 # Project: Catering Database
 
 ## Phase 1: Design and Build the Database
@@ -23,10 +23,10 @@ The purpose of the Catering database is to:
 
 ### SQL Scripts
 The following scripts are provided for interacting with the database:
-- 📜 [create_tables.sql](Phase1/scripts/create_tables_user.sql) – Create database tables
-- 📜 [insert_tables.sql](Phase1/scripts/insert_tables_fixed.sql) – Insert sample data
-- 📜 [drop_tables.sql](Phase1/scripts/drop_tables_no_cascade.sql) – Drop all tables
-- 📜 [selectAll_tables.sql](Phase1/scripts/selectAll_tables_structured.sql) – Select data from all tables
+- 📜 [create_tables.sql](create_tables_user.sql) – Create database tables
+- 📜 [insert_tables.sql](insert_tables_fixed.sql) – Insert sample data
+- 📜 [drop_tables.sql](drop_tables_no_cascade.sql) – Drop all tables
+- 📜 [selectAll_tables.sql](selectAll_tables_structured.sql) – Select data from all tables
 
 
 ### Backup
