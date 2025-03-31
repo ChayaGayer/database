@@ -30,7 +30,7 @@ The following scripts are provided for interacting with the database:
 
 
 ### Backup
-[View the backup directory](Phase1/Backup)
+[View the backup directory](phase1/files/backup3)
 
 ## Phase 2: Integration
 (To be completed in the next development phase)
