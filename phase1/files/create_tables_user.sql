@@ -1,0 +1,68 @@
+
+CREATE TABLE IF NOT EXISTS customers (
+  CustomerID INT NOT NULL,
+  CustomeName VARCHAR(100) NOT NULL,
+  Phone VARCHAR(20) NOT NULL,
+  Email VARCHAR(100) NOT NULL,
+  Address VARCHAR(255) NOT NULL,
+  PRIMARY KEY (CustomerID)
+);
+
+CREATE TABLE IF NOT EXISTS Dishes (
+  DishID INT NOT NULL,
+  DishName VARCHAR(100) NOT NULL,
+  Description TEXT NOT NULL,
+  Price DECIMAL(10,2) NOT NULL,
+  Category VARCHAR(50) NOT NULL,
+  PRIMARY KEY (DishID)
+);
+
+CREATE TABLE IF NOT EXISTS Delivers (
+  DeliveryID INT NOT NULL,
+  DeliveryDate DATE NOT NULL,
+  DeliveryStatus VARCHAR(20) NOT NULL,
+  CourierName VARCHAR(100) NOT NULL,
+  PRIMARY KEY (DeliveryID)
+);
+
+CREATE TABLE IF NOT EXISTS Payment (
+  PaymentID INT NOT NULL,
+  PaymentMethod VARCHAR(50) NOT NULL,
+  PaymentDate DATE NOT NULL,
+  PRIMARY KEY (PaymentID)
+);
+
+CREATE TABLE IF NOT EXISTS Orders (
+  OrderID INT NOT NULL,
+  OrderDate DATE NOT NULL,
+  OrderStatus VARCHAR(20) NOT NULL,
+  TotalAmount DECIMAL(10,2) NOT NULL,
+  CustomerID INT NOT NULL,
+  DeliveryID INT NOT NULL,
+  PaymentID INT NOT NULL,
+  PRIMARY KEY (OrderID),
+  FOREIGN KEY (CustomerID) REFERENCES customers(CustomerID),
+  FOREIGN KEY (DeliveryID) REFERENCES Delivers(DeliveryID),
+  FOREIGN KEY (PaymentID) REFERENCES Payment(PaymentID)
+);
+
+CREATE TABLE IF NOT EXISTS Reviews (
+  ReviewID INT NOT NULL,
+  Rating INT NOT NULL,
+  ReviewComment TEXT NOT NULL,
+  ReviewDate DATE NOT NULL,
+  CustomerID INT NOT NULL,
+  OrderID INT NOT NULL,
+  PRIMARY KEY (ReviewID),
+  FOREIGN KEY (CustomerID) REFERENCES customers(CustomerID),
+  FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
+);
+
+CREATE TABLE IF NOT EXISTS OrderDish (
+  Amount INT NOT NULL,
+  OrderID INT NOT NULL,
+  DishID INT NOT NULL,
+  PRIMARY KEY (OrderID, DishID),
+  FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
+  FOREIGN KEY (DishID) REFERENCES Dishes(DishID)
+);
