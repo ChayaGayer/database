@@ -25,7 +25,7 @@ The purpose of the Catering database is to:
 The following scripts are provided for interacting with the database:
 - 📜 [create_tables.sql](phase1/files/create_tables_user.sql) – Create database tables
 - 📜 [insert_tables.sql](insert_tables_fixed.sql) – Insert sample data
-- 📜 [drop_tables.sql](drop_tables_no_cascade.sql) – Drop all tables
+- 📜 [drop_tables.sql](phase1/files/drop_tables_no_cascade.sql) – Drop all tables
 - 📜 [selectAll_tables.sql](selectAll_tables_structured.sql) – Select data from all tables
 
 
