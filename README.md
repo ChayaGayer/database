@@ -33,6 +33,15 @@ using Python to generate CSV files with faker package to
 automate the generation of 400 rows per table
 ![image](https://github.com/user-attachments/assets/92eaa40d-a7e2-4994-a243-fbe6f3b993d4) 
 
+using Mockaroo
+Mockaroo was used to generate realistic CSV data files:
+
+📜 customers.csv – 400 customers with valid names, emails, phones, and addresses
+![image](https://github.com/user-attachments/assets/99f47257-ee1d-49e9-9c63-9f4f7b7e77b9)
+
+results for the command SELECT COUNT(*) FROM :
+![image](https://github.com/user-attachments/assets/a0e4b05f-03c2-43a0-8aed-daa52cbd0ee0)
+
 ### Backup
 [View the backup directory](phase1/files/backup3)
 
