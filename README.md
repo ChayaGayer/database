@@ -28,6 +28,10 @@ The following scripts are provided for interacting with the database:
 - 📜 [drop_tables.sql](phase1/files/drop_tables_no_cascade.sql) – Drop all tables
 - 📜 [selectAll_tables.sql](phase1/files/selectAll_tables_structured.sql) – Select data from all tables
 
+### Data
+using Python to generate CSV files with faker package to
+automate the generation of 400 rows per table
+![image](https://github.com/user-attachments/assets/92eaa40d-a7e2-4994-a243-fbe6f3b993d4) 
 
 ### Backup
 [View the backup directory](phase1/files/backup3)
