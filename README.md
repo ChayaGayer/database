@@ -26,7 +26,7 @@ The following scripts are provided for interacting with the database:
 - 📜 [create_tables.sql](phase1/files/create_tables_user.sql) – Create database tables
 - 📜 [insert_tables.sql](phase1/files/insert_tables_fixed.sql) – Insert sample data
 - 📜 [drop_tables.sql](phase1/files/drop_tables_no_cascade.sql) – Drop all tables
-- 📜 [selectAll_tables.sql](selectAll_tables_structured.sql) – Select data from all tables
+- 📜 [selectAll_tables.sql](phase1/files/selectAll_tables_structured.sql) – Select data from all tables
 
 
 ### Backup
