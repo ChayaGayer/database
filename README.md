@@ -42,6 +42,11 @@ Mockaroo was used to generate realistic CSV data files:
 results for the command SELECT COUNT(*) FROM :
 ![image](https://github.com/user-attachments/assets/a0e4b05f-03c2-43a0-8aed-daa52cbd0ee0)
 
+ using generatedata. to create csv file
+ 
+![image](https://github.com/user-attachments/assets/976791df-b243-4f89-98a5-cf6a3f9ec4d8)
+
+
 ### Backup
 [View the backup directory](phase1/files/backup3)
 
