@@ -105,29 +105,36 @@ Before
 After
 ![image](https://github.com/user-attachments/assets/a4d03278-dc97-4758-8fe6-efc3bcabcc5c)
 ![image](https://github.com/user-attachments/assets/f1feb764-5e24-4743-9728-c2118430d8d4)
-**Constraint**
-1.A ### Constraint 1: NOT NULL on Reviews.ReviewComment
 
-**Description:**  
+**Constraint**
+**1. Constraint 1:** NOT NULL on Reviews.ReviewComment 
 We added a NOT NULL constraint to the `ReviewComment` column in the `Reviews` table.  
 This ensures that every review must have a comment, and the system will not allow inserting a review without filling this field..
 Before
+
 ![image](https://github.com/user-attachments/assets/a9581a6f-7350-4bde-b3f0-786efee34576)
 After
+
 ![image](https://github.com/user-attachments/assets/34b0897f-60f3-41eb-84df-fd4b2f056338)
-2.Constraint 2: CHECK on Orders.TotalAmount
+
+**2.Constraint 2:** CHECK on Orders.TotalAmount
 We added a CHECK constraint on the TotalAmount column in the Orders table.
 This ensures that every order must have a total amount greater than zero (positive value). Orders with zero or negative amounts are not allowed.
 Before
+
 ![image](https://github.com/user-attachments/assets/d8fd6017-e826-4bd4-8517-ce0c2fb01c9c)
 After
+
 ![image](https://github.com/user-attachments/assets/9fcba756-244f-404b-969f-ed29e1710b94)
-3. Constraint 3: DEFAULT on Delivers.DeliveryStatus
+
+**3. Constraint 3:** DEFAULT on Delivers.DeliveryStatus
 We added a DEFAULT constraint on the DeliveryStatus column in the Delivers table.
 This ensures that if no status is provided when inserting a new delivery, it will automatically be set to 'status1'.
 Before
+
 ![image](https://github.com/user-attachments/assets/15a9315a-6b2e-4558-9909-0c41919388c6)
 After
+
 ![image](https://github.com/user-attachments/assets/3d91fb83-56fa-4f0a-ae5e-b46173e80b5e)
 ![image](https://github.com/user-attachments/assets/2b2d5b8a-0059-4167-a6f6-4890aa270560)
 
