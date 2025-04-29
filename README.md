@@ -52,4 +52,8 @@ results for the command SELECT COUNT(*) FROM :
 
 ## Phase 2: Integration
 (To be completed in the next development phase)
+**Queries**
+1.This query shows each order with the customer name, delivery status, payment method, date, and total amount.
+![cc991428-d541-4b66-a3a5-5cafbfad7ad8](https://github.com/user-attachments/assets/a8149817-e58c-4df6-a88c-e0af084b872e)
+2.
 
