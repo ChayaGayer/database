@@ -55,86 +55,103 @@ results for the command SELECT COUNT(*) FROM :
 **This phase includes a series of SQL queries and data manipulations to analyze and update the database. Each query is followed by an explanation and screenshots showing the results or effects.**
 **Queries**
 1. Orders with Customer InfoShows each order with the customer name, delivery status, payment method, date, and total amount.
+
 ![cc991428-d541-4b66-a3a5-5cafbfad7ad8](https://github.com/user-attachments/assets/a8149817-e58c-4df6-a88c-e0af084b872e)
 2. Orders Summary by CustomerDisplays how many orders each customer made and how much they spent in total.
+
 ![b0f364bf-0a55-40f9-bc20-1091afd87a3b](https://github.com/user-attachments/assets/cbd65d25-e3e2-4cc4-b0af-d60eb19537e1)
 3. Average Review RatingsShows the average rating and number of reviews per customer.
+
 ![618f6a8c-80c0-48a5-937b-d2712715b509](https://github.com/user-attachments/assets/45e33d78-6e0f-4077-9139-21178e22b031)
 4. Top 3 Most Ordered DishesDisplays the 3 most frequently ordered dishes.
+
 ![ed5e8821-61d7-443b-afcc-7b9c7299cb2c](https://github.com/user-attachments/assets/44775be2-75ee-41cc-8cf0-82491adcce0c)
-5.This query shows all orders made in the last 30 days, including customer name, order date, and total amount.
+5. Recent Orders (Last 30 Days)Shows all orders placed within the last 30 days.
+
 ![0fa94115-37eb-4e57-a2ae-58a338fef5b2](https://github.com/user-attachments/assets/ce7eba20-a819-4ce2-b3cf-65cd50f62bf2)
-6.This query summarizes the number of orders and total revenue for each month, grouped by year and month.
+6. Monthly Orders & Revenue SummarySummarizes the number of orders and total revenue by month and year.
+
 ![1fff6818-43bd-4614-b72c-931a94e85d1a](https://github.com/user-attachments/assets/3daec6b2-320d-4175-b041-20917430098b)
-7.This query finds all dishes that were ordered with an average quantity greater than 2 units per order.
+7. Dishes with Avg Quantity > 2Finds dishes ordered with an average quantity above 2.
+
 ![14e1c756-39ba-4799-b148-58499201bef8](https://github.com/user-attachments/assets/3633b91a-3f3d-4ca8-b482-f8268a4af1dd)
-8.This query finds customers who have never made an order (i.e., not connected to any order in the Orders table)
+8. Customers with No OrdersIdentifies customers who have never made an order.
+
 ![216aacba-9b3c-4727-b4d6-bddf59c8d75c](https://github.com/user-attachments/assets/b7aa50f3-12b6-4435-a4b7-7a030c80a975)
-9.DELETE
+9.9. Delete Old ReviewsDeletes reviews older than one year.
 Before Deletion
+
 ![787846ab-6b50-49a7-9ef2-2df06cb46430](https://github.com/user-attachments/assets/ef9ba10c-9824-47b6-9e23-30bb35468754)
 This query deletes all reviews that were written more than one year ago.
 After Deletion
 ![929e458e-1dfe-4c57-9b67-01e1fcc3c923](https://github.com/user-attachments/assets/9ef9e4b3-72ce-4517-a277-cba3ff9090ad)
+
 ![image](https://github.com/user-attachments/assets/fba827e4-9a34-477e-b639-30550e68abd9)
-10.This query deletes all orders that have a total amount of 0
+10. Delete Orders with Total = 0Removes orders where the total amount is 0.
 Before Deletion
+
 ![image](https://github.com/user-attachments/assets/301f70d2-2fe7-4742-8fc6-97699c15e71e)
 After Deletion
+
 ![image](https://github.com/user-attachments/assets/7aff2ba9-8744-4456-8168-3459fccb15f9)
-11.This query deletes all customers who have no orders and no reviews.
-Before Deletion
+11. Delete Inactive CustomersDeletes customers with no orders and no reviews.
+
 ![image](https://github.com/user-attachments/assets/af820d1e-8891-4926-b955-9147ac867aa3)
 After Deletion
+
 ![image](https://github.com/user-attachments/assets/08a1d389-7f12-4377-9485-7c7343309f68)
+
 ![image](https://github.com/user-attachments/assets/00437c22-1fbf-4547-8412-5a487a8efabf)
 12.This query updates the delivery status to 'Completed' for all deliveries with a past date.
 Before
+
 ![image](https://github.com/user-attachments/assets/7178c342-8a45-41af-a8fb-9618dbf59582)
 After
+
 ![image](https://github.com/user-attachments/assets/df0a53d1-39cc-4579-b306-c72cb470a4cd)
+
 ![image](https://github.com/user-attachments/assets/0e9c6e6f-f3fd-4874-be84-c4367befdf9a)
-13.This query increases the price of all dishes in the 'Premium' category by 10%.
-Before
+13. Increase Price for Premium DishesRaises price by 10% for all dishes in the 'Premium' category.
+
 ![image](https://github.com/user-attachments/assets/71853a22-d795-4c98-83ba-1ec4cb9f85ab)
 After
+
 ![image](https://github.com/user-attachments/assets/c2ef7756-0e93-4ae7-b587-5f7f65ead20d)
+
 ![image](https://github.com/user-attachments/assets/0718655e-9ff6-4922-b80f-c4f903be0794)
-14.This query updates reviews with a rating of 1 to include the comment 'Needs follow-up'.
-Before
+14. Update Low-Rated ReviewsChanges comment of reviews rated 1 to 'Needs follow-up'.
+
 ![image](https://github.com/user-attachments/assets/4f9c2158-a8c0-4ec0-8718-913acc0cf27c)
 After
+
 ![image](https://github.com/user-attachments/assets/a4d03278-dc97-4758-8fe6-efc3bcabcc5c)
+
 ![image](https://github.com/user-attachments/assets/f1feb764-5e24-4743-9728-c2118430d8d4)
 
-**Constraint**
-**1. Constraint 1:** NOT NULL on Reviews.ReviewComment 
-We added a NOT NULL constraint to the `ReviewComment` column in the `Reviews` table.  
-This ensures that every review must have a comment, and the system will not allow inserting a review without filling this field..
-Before
+Constraints
+
+Constraint 1: NOT NULL on Reviews.ReviewCommentEnforces that every review must have a comment.
 
 ![image](https://github.com/user-attachments/assets/a9581a6f-7350-4bde-b3f0-786efee34576)
 After
 
 ![image](https://github.com/user-attachments/assets/34b0897f-60f3-41eb-84df-fd4b2f056338)
 
-**2.Constraint 2:** CHECK on Orders.TotalAmount
-We added a CHECK constraint on the TotalAmount column in the Orders table.
-This ensures that every order must have a total amount greater than zero (positive value). Orders with zero or negative amounts are not allowed.
+Constraint 2: CHECK on Orders.TotalAmountEnsures the total amount in orders is greater than 0.
+
 Before
 
 ![image](https://github.com/user-attachments/assets/d8fd6017-e826-4bd4-8517-ce0c2fb01c9c)
 After
 
 ![image](https://github.com/user-attachments/assets/9fcba756-244f-404b-969f-ed29e1710b94)
+Constraint 3: DEFAULT on Delivers.DeliveryStatusAdds default value 'status1' to DeliveryStatus if not provided..
 
-**3. Constraint 3:** DEFAULT on Delivers.DeliveryStatus
-We added a DEFAULT constraint on the DeliveryStatus column in the Delivers table.
-This ensures that if no status is provided when inserting a new delivery, it will automatically be set to 'status1'.
 Before
 
 ![image](https://github.com/user-attachments/assets/15a9315a-6b2e-4558-9909-0c41919388c6)
 After
+
 
 ![image](https://github.com/user-attachments/assets/3d91fb83-56fa-4f0a-ae5e-b46173e80b5e)
 ![image](https://github.com/user-attachments/assets/2b2d5b8a-0059-4167-a6f6-4890aa270560)
