@@ -51,15 +51,16 @@ results for the command SELECT COUNT(*) FROM :
 [View the backup directory](phase1/files/backup3)
 
 ## Phase 2: Integration
-(To be completed in the next development phase)
+
+**This phase includes a series of SQL queries and data manipulations to analyze and update the database. Each query is followed by an explanation and screenshots showing the results or effects.**
 **Queries**
-1.This query shows each order with the customer name, delivery status, payment method, date, and total amount.
+1. Orders with Customer InfoShows each order with the customer name, delivery status, payment method, date, and total amount.
 ![cc991428-d541-4b66-a3a5-5cafbfad7ad8](https://github.com/user-attachments/assets/a8149817-e58c-4df6-a88c-e0af084b872e)
-2.This query shows how many orders each customer made and how much they spent in total.
+2. Orders Summary by CustomerDisplays how many orders each customer made and how much they spent in total.
 ![b0f364bf-0a55-40f9-bc20-1091afd87a3b](https://github.com/user-attachments/assets/cbd65d25-e3e2-4cc4-b0af-d60eb19537e1)
-3.This query shows the average review rating and number of reviews for each customer.
+3. Average Review RatingsShows the average rating and number of reviews per customer.
 ![618f6a8c-80c0-48a5-937b-d2712715b509](https://github.com/user-attachments/assets/45e33d78-6e0f-4077-9139-21178e22b031)
-4.This query shows the 3 most frequently ordered dishes, based on the total amount ordered
+4. Top 3 Most Ordered DishesDisplays the 3 most frequently ordered dishes.
 ![ed5e8821-61d7-443b-afcc-7b9c7299cb2c](https://github.com/user-attachments/assets/44775be2-75ee-41cc-8cf0-82491adcce0c)
 5.This query shows all orders made in the last 30 days, including customer name, order date, and total amount.
 ![0fa94115-37eb-4e57-a2ae-58a338fef5b2](https://github.com/user-attachments/assets/ce7eba20-a819-4ce2-b3cf-65cd50f62bf2)
