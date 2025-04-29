@@ -69,6 +69,59 @@ results for the command SELECT COUNT(*) FROM :
 ![14e1c756-39ba-4799-b148-58499201bef8](https://github.com/user-attachments/assets/3633b91a-3f3d-4ca8-b482-f8268a4af1dd)
 8.This query finds customers who have never made an order (i.e., not connected to any order in the Orders table)
 ![216aacba-9b3c-4727-b4d6-bddf59c8d75c](https://github.com/user-attachments/assets/b7aa50f3-12b6-4435-a4b7-7a030c80a975)
+9.DELETE
+Before Deletion
+![787846ab-6b50-49a7-9ef2-2df06cb46430](https://github.com/user-attachments/assets/ef9ba10c-9824-47b6-9e23-30bb35468754)
+This query deletes all reviews that were written more than one year ago.
+After Deletion
+![929e458e-1dfe-4c57-9b67-01e1fcc3c923](https://github.com/user-attachments/assets/9ef9e4b3-72ce-4517-a277-cba3ff9090ad)
+![image](https://github.com/user-attachments/assets/fba827e4-9a34-477e-b639-30550e68abd9)
+10.This query deletes all orders that have a total amount of 0
+Before Deletion
+![image](https://github.com/user-attachments/assets/301f70d2-2fe7-4742-8fc6-97699c15e71e)
+After Deletion
+![image](https://github.com/user-attachments/assets/7aff2ba9-8744-4456-8168-3459fccb15f9)
+11.This query deletes all customers who have no orders and no reviews.
+Before Deletion
+![image](https://github.com/user-attachments/assets/af820d1e-8891-4926-b955-9147ac867aa3)
+After Deletion
+![image](https://github.com/user-attachments/assets/08a1d389-7f12-4377-9485-7c7343309f68)
+![image](https://github.com/user-attachments/assets/00437c22-1fbf-4547-8412-5a487a8efabf)
+12.This query updates the delivery status to 'Completed' for all deliveries with a past date.
+Before
+![image](https://github.com/user-attachments/assets/7178c342-8a45-41af-a8fb-9618dbf59582)
+After
+![image](https://github.com/user-attachments/assets/df0a53d1-39cc-4579-b306-c72cb470a4cd)
+![image](https://github.com/user-attachments/assets/0e9c6e6f-f3fd-4874-be84-c4367befdf9a)
+13.This query increases the price of all dishes in the 'Premium' category by 10%.
+Before
+![image](https://github.com/user-attachments/assets/71853a22-d795-4c98-83ba-1ec4cb9f85ab)
+After
+![image](https://github.com/user-attachments/assets/c2ef7756-0e93-4ae7-b587-5f7f65ead20d)
+![image](https://github.com/user-attachments/assets/0718655e-9ff6-4922-b80f-c4f903be0794)
+14.This query updates reviews with a rating of 1 to include the comment 'Needs follow-up'.
+Before
+![image](https://github.com/user-attachments/assets/4f9c2158-a8c0-4ec0-8718-913acc0cf27c)
+After
+![image](https://github.com/user-attachments/assets/a4d03278-dc97-4758-8fe6-efc3bcabcc5c)
+![image](https://github.com/user-attachments/assets/f1feb764-5e24-4743-9728-c2118430d8d4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
