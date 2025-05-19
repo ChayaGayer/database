@@ -66,6 +66,6 @@ ALTER TABLE public.dishes
 DROP COLUMN mname,
 DROP COLUMN mprice;
 
-ALTER TABLE delivery 
+ALTER TABLE delivers 
 DROP COLUMN couriername,
 DROP COLUMN deliverystatus;
