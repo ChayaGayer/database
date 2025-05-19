@@ -50,10 +50,10 @@ results for the command SELECT COUNT(*) FROM :
 ### Backup
 [View the backup directory](phase1/files/backup3)
 
-## Phase 2
+### Phase 2
 
 **This phase includes a series of SQL queries and data manipulations to analyze and update the database. Each query is followed by an explanation and screenshots showing the results or effects.**
-**Queries**
+###**Queries**
 1. Orders with Customer InfoShows each order with the customer name, delivery status, payment method, date, and total amount.
 
 ![cc991428-d541-4b66-a3a5-5cafbfad7ad8](https://github.com/user-attachments/assets/a8149817-e58c-4df6-a88c-e0af084b872e)
