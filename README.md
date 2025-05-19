@@ -157,6 +157,60 @@ After
 ![image](https://github.com/user-attachments/assets/2b2d5b8a-0059-4167-a6f6-4890aa270560)
 
 
+# Phase 3
+
+## 1. Diagrams
+
+### 🧭 DSD – New Department
+![DSD New](./dsd_new.png)
+
+### 🧭 ERD – New Department
+![ERD New](./erd_new.png)
+
+### 🧭 ERD – Combined System
+![ERD Shared](./erd_shared.png)
+
+### 🧭 DSD – After Integration
+![DSD Integrated](./dsd_integrated.png)
+
+---
+
+## 2. Integration Decisions
+
+- Table `X` from the new department was merged with table `Y` in the central schema.
+- Field `Z` was added to allow linking between orders and shipments.
+- Redundant fields (e.g., `old_status`) were removed to prevent data duplication.
+- Foreign key constraints were adjusted to support new relationships.
+- Views were created to abstract and unify data for queries.
+
+---
+
+## 3. Explanation of SQL Files
+
+### 🗂 Integrate.sql
+
+- Contains `ALTER TABLE`, `DROP`, and `CREATE` statements used for schema adaptation.
+- Includes the creation of new junction tables and adjustment of existing keys.
+
+### 🗂 Views.sql
+
+- Defines reusable views for common reporting needs.
+- Includes logic for aggregation, filtering, and simplified joins.
+
+---
+
+## 4. Views – Output and Descriptions
+
+> Each view includes:
+> - Description
+> - A sample `SELECT *` query (limited to 10 results)
+> - Screenshot of the output
+
+### 📊 View: `view_orders_summary`
+**Description:** Shows the number of orders and total amount per customer.
+
+```sql
+SELECT * FROM view_orders_summary LIMIT 10;
 
 
 
