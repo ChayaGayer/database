@@ -165,7 +165,7 @@ After
 ![DSD New](./dsd_new.png)
 
 ### ERD – New Department
-![ERD New](./erd_new.png)
+![ERD New](Phase3/image(1).png)
 
 ###  ERD – Combined System
 ![ERD Shared](./erd_shared.png)
