@@ -65,3 +65,7 @@ ORDER BY dishid;
 ALTER TABLE public.dishes
 DROP COLUMN mname,
 DROP COLUMN mprice;
+
+ALTER TABLE delivery 
+DROP COLUMN couriername,
+DROP COLUMN deliverystatus;
