@@ -50,7 +50,7 @@ results for the command SELECT COUNT(*) FROM :
 ### Backup
 [View the backup directory](phase1/files/backup3)
 
-### Phase 2
+## Phase 2
 
 **This phase includes a series of SQL queries and data manipulations to analyze and update the database. Each query is followed by an explanation and screenshots showing the results or effects.**
 ###**Queries**
