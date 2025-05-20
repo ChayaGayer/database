@@ -162,16 +162,16 @@ After
 ## 1. Diagrams
 
 ### DSD – New Department
-![image](https://github.com/ChayaGayer/database/blob/master/Phase3/DSD.png))
+![image](https://github.com/ChayaGayer/database/blob/master/Phase3/DSD.png)
 
 ### ERD – New Department
-![image](https://github.com/ChayaGayer/database/blob/master/Phase3/DSD.png))
+![image](https://github.com/ChayaGayer/database/blob/master/Phase3/ERD.png)
 
 ###  ERD – Combined System
-![image](https://github.com/ChayaGayer/database/blob/master/Phase3/DSDnew.png))
+![image](https://github.com/ChayaGayer/database/blob/master/Phase3/DSDnew.png)
 
 ### DSD – After Integration
-![image](https://github.com/ChayaGayer/database/blob/master/Phase3/DSD.png))
+![image](https://github.com/ChayaGayer/database/blob/master/Phase3/ERDnew.png)
 
 ---
 
