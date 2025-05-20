@@ -175,7 +175,7 @@ After
 
 ---
 
-## 2. Integration Decisions
+###  Integration Decisions
 Initial Step: Load Both Backups into a Unified Database
 
 Step 1: Remove Foreign Key Constraint-To allow updates to the deliveryid column in both orders and delivers tables without violating referential integrity.
@@ -225,7 +225,7 @@ DROP COLUMN mprice;
 
 📜 [Integrate.sql](https://github.com/ChayaGayer/database/blob/master/Phase3/Integrate.sql)
 
-## Views
+### Views
 View 1: dishes_with_orders
 Description:
 This view combines the dishes and orders tables using a NATURAL JOIN to show which dishes were ordered, their categories, and order-related data like date and total amount.
@@ -294,9 +294,10 @@ ORDER BY endtime;
 
 📜 [Views.sql](https://github.com/ChayaGayer/database/blob/master/Phase3/Integrate.sql)
 
+https://github.com/ChayaGayer/database/blob/master/Phase3/backup200525
 
-
-
+### Backup
+[backup200525](https://github.com/ChayaGayer/database/blob/master/Phase3/backup200525)
 
 
 
