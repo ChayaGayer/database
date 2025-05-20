@@ -176,12 +176,54 @@ After
 ---
 
 ## 2. Integration Decisions
+Initial Step: Load Both Backups into a Unified Database
 
-- Table `X` from the new department was merged with table `Y` in the central schema.
-- Field `Z` was added to allow linking between orders and shipments.
-- Redundant fields (e.g., `old_status`) were removed to prevent data duplication.
-- Foreign key constraints were adjusted to support new relationships.
-- Views were created to abstract and unify data for queries.
+Step 1: Remove Foreign Key Constraint-To allow updates to the deliveryid column in both orders and delivers tables without violating referential integrity.
+
+ALTER TABLE public.orders
+DROP CONSTRAINT orders_deliveryid_fkey;
+
+Step 2: Update deliveryid Values to Avoid Conflicts-To avoid duplicate primary/foreign key values between existing data and newly imported data. The offset (+605) ensures unique deliveryid values.
+
+UPDATE public.orders
+SET deliveryid = deliveryid + 605
+WHERE deliveryid IS NOT NULL;
+
+UPDATE public.delivers
+SET deliveryid = deliveryid + 605;
+
+ Step 3: Re-add the Foreign Key Constraint-To restore referential integrity after aligning the IDs.
+
+ALTER TABLE public.orders
+ADD CONSTRAINT orders_deliveryid_fkey
+FOREIGN KEY (deliveryid)
+REFERENCES public.delivers (deliveryid);
+
+Step 4: Insert Workers from delivers – Default Values Version-
+INSERT INTO public.worker (
+    wfirstname, wlastname, wid, salary, havebonus, wseniority, wstatus
+)
+SELECT 
+    couriername, '', deliveryid, 0, 0, 0, deliverystatus
+FROM public.delivers
+WHERE deliveryid NOT IN (SELECT wid FROM public.worker);
+
+Step 5: Merge meal Data into dishes-To import meal data into the dishes table, while avoiding duplicates.
+UPDATE public.dishes 
+SET 
+    mname = m.mname,
+    mprice = m.mprice,
+    dishname = m.mname,
+    price = m.mprice::numeric(10,2)
+FROM public.meal m
+WHERE dishes.dishid = m.mid;
+Step 6: Cleanup (Remove Temporary Columns)
+
+ALTER TABLE public.dishes
+DROP COLUMN mname,
+DROP COLUMN mprice;
+
+📜 [Integrate.sql](phase1/files/create_tables_user.sql)
 
 
 
