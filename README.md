@@ -223,7 +223,82 @@ ALTER TABLE public.dishes
 DROP COLUMN mname,
 DROP COLUMN mprice;
 
-📜 [Integrate.sql](phase1/files/create_tables_user.sql)
+📜 [Integrate.sql](https://github.com/ChayaGayer/database/blob/master/Phase3/Integrate.sql)
+
+## Views
+View 1: dishes_with_orders
+Description:
+This view combines the dishes and orders tables using a NATURAL JOIN to show which dishes were ordered, their categories, and order-related data like date and total amount.
+CREATE VIEW dishes_with_orders AS 
+SELECT 
+    d.dishid,
+    d.dishname,
+    d.category,
+    o.orderid,
+    o.orderdate,
+    o.totalamount
+FROM 
+    public.dishes d
+ NATURAL JOIN
+    public.orders o 
+ ![image](https://github.com/user-attachments/assets/09ef4b5e-d026-479f-bdbe-fa5edceb38c7)
+
+Query 1: High-value dish orders
+SELECT *
+FROM dishes_with_orders
+WHERE totalamount > 200;
+![image](https://github.com/user-attachments/assets/441629d7-543d-4557-9203-3c4842ff4c53)
+
+Query 2: Number of orders per dish
+SELECT dishid, dishname, COUNT(orderid) AS order_count
+FROM dishes_with_orders
+GROUP BY dishid, dishname;
+![image](https://github.com/user-attachments/assets/8657d37e-d8e7-4677-bb2d-cf2680b71296)
+
+View 2: worker_morning_shifts
+Description:
+This view uses a CROSS JOIN to match every worker with every shift, then filters to include only shifts starting before 12:00.
+CREATE VIEW worker_morning_shifts AS
+SELECT 
+    w.wid,
+    w.wfirstname || ' ' || w.wlastname AS full_name,
+    w.salary,
+    w.wstatus,
+    s.shid,
+    s.starttime,
+    s.endtime
+FROM 
+    public.worker w
+CROSS JOIN 
+    public.shift s
+WHERE 
+    s.starttime < '12:00';
+
+ ![image](https://github.com/user-attachments/assets/8dc95128-5801-4e41-bee4-8bec64325fdf)
+
+Query 1: Morning shift count per worker
+Counts how many shifts each worker is scheduled for that start before 12:00.
+SELECT full_name, COUNT(shid) AS morning_shift_count
+FROM worker_morning_shifts
+GROUP BY full_name
+ORDER BY morning_shift_count DESC;
+![image](https://github.com/user-attachments/assets/3db38465-0e11-4ef9-9b60-b49b0903aad3)
+
+Query 2: Workers who finish before 13:00
+Returns names and shift times of workers whose shifts end before 13:00.
+SELECT full_name, starttime, endtime
+FROM worker_morning_shifts
+WHERE endtime < '13:00'
+ORDER BY endtime;
+![image](https://github.com/user-attachments/assets/5f73de45-fee3-45c9-8912-b4731aaed84c)
+
+📜 [Views.sql](https://github.com/ChayaGayer/database/blob/master/Phase3/Integrate.sql)
+
+
+
+
+
+
 
 
 
