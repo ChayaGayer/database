@@ -294,7 +294,7 @@ ORDER BY endtime;
 
 📜 [Views.sql](https://github.com/ChayaGayer/database/blob/master/Phase3/Integrate.sql)
 
-https://github.com/ChayaGayer/database/blob/master/Phase3/backup200525
+
 
 ### Backup
 [backup200525](https://github.com/ChayaGayer/database/blob/master/Phase3/backup200525)
