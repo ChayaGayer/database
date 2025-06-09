@@ -1,0 +1,25 @@
+-- === פרוצדורה 1 ===
+CREATE OR REPLACE PROCEDURE update_bonus_for_senior_workers()
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    UPDATE worker
+    SET havebonus = 1  
+    WHERE wseniority > 5;
+END;
+$$;
+
+
+-- === פרוצדורה 2 ===
+CREATE OR REPLACE PROCEDURE assign_worker_to_shift(
+    p_worker_id INT,
+    p_shift_id INT
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    INSERT INTO scheduled (sdate, wid, shid)
+    VALUES (CURRENT_DATE, p_worker_id, p_shift_id);
+END;
+$$;
+
