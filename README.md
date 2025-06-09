@@ -349,6 +349,8 @@ BEGIN
     WHERE wseniority > 5;
 END;
 $$;
+
+
 ![image](https://github.com/user-attachments/assets/94474b62-4cee-4f04-b614-86ed444ba248)
 
 
@@ -368,6 +370,9 @@ BEGIN
     VALUES (CURRENT_DATE, p_worker_id, p_shift_id);
 END;
 $$;
+
+
+
 ![image](https://github.com/user-attachments/assets/1f5b3148-713b-432f-9a3d-4dacb587d879)
 
 ### Triggers 
@@ -386,13 +391,19 @@ BEGIN
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
-![image](https://github.com/user-attachments/assets/02a00842-810c-4b1f-8593-c301d905ee10)
-![image](https://github.com/user-attachments/assets/8b6d7507-493a-425a-b97e-8b9a192417ab)
+
 
 CREATE TRIGGER trg_salary_change
 AFTER UPDATE ON worker
 FOR EACH ROW
 EXECUTE FUNCTION log_salary_change();
+
+
+![image](https://github.com/user-attachments/assets/02a00842-810c-4b1f-8593-c301d905ee10)
+![image](https://github.com/user-attachments/assets/8b6d7507-493a-425a-b97e-8b9a192417ab)
+
+
+
 
 -validate_shift_times
 Description:
@@ -413,14 +424,20 @@ CREATE TRIGGER trg_shift_time_check
 BEFORE INSERT OR UPDATE ON shift
 FOR EACH ROW
 EXECUTE FUNCTION validate_shift_times();
+
+
+
 ![image](https://github.com/user-attachments/assets/00e23383-5fe8-4c44-89b3-a96dc5d203db)
+
+
+
+
 
 ### Main Program 
 Description:
 Calls the procedure to update bonuses and the function to sum salaries by status.
 
 Code:
-
 
 DO $$
 DECLARE
@@ -431,6 +448,10 @@ BEGIN
     RAISE NOTICE 'Total salary of active workers: %', total;
 END;
 $$;
+
+
+
+
 ![image](https://github.com/user-attachments/assets/eb2150ab-cee8-4b30-8e8f-3065ff72d790)
 
 
@@ -449,23 +470,17 @@ BEGIN
     RAISE NOTICE 'Worker 1 has % shifts', shift_num;
 END;
 $$;
+
+
+
+
 ![image](https://github.com/user-attachments/assets/8b898a4d-5566-4891-add7-6c1a0ae6bf4c)
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+### Backup
+[backup](https://github.com/ChayaGayer/database/blob/master/Phase3/backup200525)
 
 
 
