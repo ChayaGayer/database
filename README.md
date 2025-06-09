@@ -299,10 +299,157 @@ ORDER BY endtime;
 ### Backup
 [backup200525](https://github.com/ChayaGayer/database/blob/master/Phase3/backup200525)
 
+# Phase D
+### Functions
+-total_salary_by_status
+Description:
+Calculates the total salary of workers with a specific status (e.g., 'Active').
+
+Code:
+CREATE OR REPLACE FUNCTION total_salary_by_status(p_status TEXT)
+RETURNS NUMERIC AS $$
+DECLARE
+    total NUMERIC := 0;
+BEGIN
+    SELECT SUM(salary) INTO total
+    FROM worker
+    WHERE wstatus = p_status;
+    RETURN total;
+END;
+$$ LANGUAGE plpgsql;
+
+-count_worker_shifts
+Description:
+Returns the number of shifts a worker is scheduled for, based on their ID.
+
+Code:
+CREATE OR REPLACE FUNCTION count_worker_shifts(p_worker_id INT)
+RETURNS INT AS $$
+DECLARE
+    shift_count INT;
+BEGIN
+    SELECT COUNT(*) INTO shift_count
+    FROM scheduled
+    WHERE wid = p_worker_id;
+    RETURN shift_count;
+END;
+$$ LANGUAGE plpgsql;
+### Procedures 
+update_bonus_for_senior_workers
+Description:
+Updates the havebonus field to 1 for workers with seniority greater than 5.
+
+Code:
+CREATE OR REPLACE PROCEDURE update_bonus_for_senior_workers()
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    UPDATE worker
+    SET havebonus = 1
+    WHERE wseniority > 5;
+END;
+$$;
+![image](https://github.com/user-attachments/assets/94474b62-4cee-4f04-b614-86ed444ba248)
+
+
+-assign_worker_to_shift
+Description:
+Inserts a row into the scheduled table, assigning a worker to a shift on the current date.
+
+Code:
+CREATE OR REPLACE PROCEDURE assign_worker_to_shift(
+    p_worker_id INT,
+    p_shift_id INT
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    INSERT INTO scheduled (sdate, wid, shid)
+    VALUES (CURRENT_DATE, p_worker_id, p_shift_id);
+END;
+$$;
+![image](https://github.com/user-attachments/assets/1f5b3148-713b-432f-9a3d-4dacb587d879)
+
+### Triggers 
+-log_salary_change
+Description:
+Logs any salary update into the worker_salary_log table.
+
+Code:
+CREATE OR REPLACE FUNCTION log_salary_change()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.salary <> OLD.salary THEN
+        INSERT INTO worker_salary_log(wid, old_salary, new_salary, change_date)
+        VALUES (OLD.wid, OLD.salary, NEW.salary, CURRENT_DATE);
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+![image](https://github.com/user-attachments/assets/02a00842-810c-4b1f-8593-c301d905ee10)
+![image](https://github.com/user-attachments/assets/8b6d7507-493a-425a-b97e-8b9a192417ab)
+
+CREATE TRIGGER trg_salary_change
+AFTER UPDATE ON worker
+FOR EACH ROW
+EXECUTE FUNCTION log_salary_change();
+
+-validate_shift_times
+Description:
+Ensures that a shift’s endtime is after starttime.
+
+Code:
+CREATE OR REPLACE FUNCTION validate_shift_times()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.endtime <= NEW.starttime THEN
+        RAISE EXCEPTION 'End time must be after start time';
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_shift_time_check
+BEFORE INSERT OR UPDATE ON shift
+FOR EACH ROW
+EXECUTE FUNCTION validate_shift_times();
+![image](https://github.com/user-attachments/assets/00e23383-5fe8-4c44-89b3-a96dc5d203db)
+
+### Main Program 
+Description:
+Calls the procedure to update bonuses and the function to sum salaries by status.
+
+Code:
+
+
+DO $$
+DECLARE
+    total NUMERIC;
+BEGIN
+    CALL update_bonus_for_senior_workers();
+    total := total_salary_by_status('Active');
+    RAISE NOTICE 'Total salary of active workers: %', total;
+END;
+$$;
+![image](https://github.com/user-attachments/assets/eb2150ab-cee8-4b30-8e8f-3065ff72d790)
 
 
 
+-2
+Description:
+Assigns a worker to a shift and prints the number of shifts they're scheduled for.
 
+Code:
+DO $$
+DECLARE
+    shift_num INT;
+BEGIN
+    CALL assign_worker_to_shift(1, 5000);
+    shift_num := count_worker_shifts(1);
+    RAISE NOTICE 'Worker 1 has % shifts', shift_num;
+END;
+$$;
+![image](https://github.com/user-attachments/assets/8b898a4d-5566-4891-add7-6c1a0ae6bf4c)
 
 
 
