@@ -1,0 +1,27 @@
+-- === פונקציה 1 ===
+CREATE OR REPLACE FUNCTION total_salary_by_status(p_status TEXT)
+RETURNS NUMERIC AS $$
+DECLARE
+    total NUMERIC := 0;
+BEGIN
+    SELECT SUM(salary) INTO total
+    FROM worker
+    WHERE wstatus = p_status;
+    RETURN total;
+END;
+$$ LANGUAGE plpgsql;
+-- === פונקציה 2 ===
+CREATE OR REPLACE FUNCTION count_worker_shifts(p_worker_id INT)
+RETURNS INT AS $$
+DECLARE
+    shift_count INT;
+BEGIN
+    SELECT COUNT(*) INTO shift_count
+    FROM scheduled
+    WHERE wid = p_worker_id;
+
+    RETURN shift_count;
+END;
+$$ LANGUAGE plpgsql;
+
+
