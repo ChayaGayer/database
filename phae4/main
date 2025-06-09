@@ -1,0 +1,23 @@
+-- === תוכנית ראשית 1 ===
+DO $$
+DECLARE
+    total NUMERIC;
+BEGIN
+    CALL update_bonus_for_senior_workers();
+    total := total_salary_by_status('Active');
+    RAISE NOTICE 'Total salary of active workers: %', total;
+END;
+$$;
+
+
+-- === תוכנית ראשית 2 ===
+DO $$
+DECLARE
+    shift_num INT;
+BEGIN
+    CALL assign_worker_to_shift(1, 5000); -- לדוגמה, עובד 1 שובץ למשמרת 1001
+
+    shift_num := count_worker_shifts(1); -- בדיקה כמה שיבוצים יש לו
+    RAISE NOTICE 'Worker 1 has % shifts', shift_num;
+END;
+$$;
