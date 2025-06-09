@@ -1,0 +1,39 @@
+-- === טריגר 1: לוג שינוי משכורת ===
+CREATE TABLE IF NOT EXISTS worker_salary_log (
+    wid INT,
+    old_salary NUMERIC,
+    new_salary NUMERIC,
+    change_date DATE
+);
+
+CREATE OR REPLACE FUNCTION log_salary_change()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.salary <> OLD.salary THEN
+        INSERT INTO worker_salary_log(wid, old_salary, new_salary, change_date)
+        VALUES (OLD.wid, OLD.salary, NEW.salary, CURRENT_DATE);
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_salary_change
+AFTER UPDATE ON worker
+FOR EACH ROW
+EXECUTE FUNCTION log_salary_change();
+
+-- === טריגר 2: בדיקת זמני משמרת ===
+CREATE OR REPLACE FUNCTION validate_shift_times()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.endtime <= NEW.starttime THEN
+        RAISE EXCEPTION 'End time must be after start time';
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_shift_time_check
+BEFORE INSERT OR UPDATE ON shift
+FOR EACH ROW
+EXECUTE FUNCTION validate_shift_times();
