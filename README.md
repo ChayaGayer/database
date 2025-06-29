@@ -480,51 +480,301 @@ $$;
 
 
 ### Backup
-[90620252](https://github.com/Ch# Catering Management System 🍽️ 
-
-## 🟢 Application Overview
-This is a graphical database application for managing a **catering service**. It allows users to manage workers, customers, shift scheduling, and run queries and procedures using a user-friendly interface built with Python and Tkinter.
-
----
-
-## 📁 Project Structure
-This repository contains:
-
-1. **gui_code/** – the full implementation of the graphical user interface.
-2. **instructions.txt** – a step-by-step guide for installing and running the system.
-3. **screenshots/** – screenshots of the system in action.
-4. **README.md** – this project report and documentation.
-
----
-
-## 🧭 How to Run the Application
-### Requirements:
-- Python 3.x installed
-- PostgreSQL running with a database named `ITINEWDB`
-- Python packages:
-  - `psycopg2`
-  - `Pillow` (for image support)
-
-### Run:
-From the `gui_code/` directory, run:
-```bash
-python main.py
-ayaGayer/database/blob/master/phae4/90620252)
+[90620252](https://github.com/ChayaGayer/database/blob/master/phae4/90620252)
 
 
 
 
 # Phase E
+## 🟢 Application Overview
+#Catering Management System 🍽️
+This is a graphical database application for managing a **catering service**. It allows users to manage workers, customers, shift scheduling, and run queries and procedures using a user-friendly interface built with Python and Tkinter.
+
+Application Deployment Instructions
+1. Application Setup
+Requirements:
+
+Python 3.x installed
+
+PostgreSQL installed, with a database named: ITINEWDB
+
+Required Python packages:
+
+psycopg2
+
+Pillow (for image support)
+
+2. Running the Application
+To run the graphical application:
+
+Navigate to the gui_code/ directory in the terminal.
+
+Execute the following command:
+
+bash
+Copy
+Edit
+python main.py
+Ensure that the database server is running and that the relevant tables, procedures, and functions exist in the ITINEWDB database.
+
+🧩 Tools and Technologies
+The following tools and technologies were used in the development of this application:
+
+Python 3.x – core programming language
+
+Tkinter – Python's standard GUI library
+
+PostgreSQL – the database system used
+
+pgAdmin – database management interface
+
+psycopg2 – PostgreSQL adapter for Python
+
+Pillow – for loading and displaying images in the GUI
+
+Visual Studio Code – primary development environment
+
+Application Screenshots
+Main Menu – Welcome Screen
+This is the main entry screen of the catering management system. It features a clean, user-friendly interface with a welcoming message and five primary navigation buttons:
+
+Manage Workers – Opens the interface for managing worker records.
+
+Manage Customers – Opens the interface for managing customer data.
+
+Assign Worker to Shift – Opens the interface for linking workers to scheduled shifts.
+
+Queries and Procedures – Opens the screen for executing predefined SQL queries and stored procedures.
+
+Exit – Closes the application.
+
+This screen provides easy access to all core features of the system.
+
+![image](https://github.com/user-attachments/assets/13625c93-de28-4eef-80e4-649dbc2cb3ce)
+
+Worker Management Screen
+This screen provides a comprehensive interface for managing worker records in the catering system. Users can:
+
+View all workers in a structured table showing ID, name, salary, seniority, status, and bonus.
+
+Add a new worker by entering their details in the text fields above and clicking "הוסף עובד" ("Add Worker").
+
+Update an existing worker by selecting a row, editing the details, and clicking "עדכן עובד" ("Update Worker").
+
+Delete a worker using the "מחק עובד" ("Delete Worker") button.
+
+Refresh the table to reflect the latest changes using the "רענן" ("Refresh") button.
+
+The screen is designed with a clean, pink background and user-friendly layout, allowing efficient management of employee data.
 
 
+![image](https://github.com/user-attachments/assets/2924c6b7-5a91-43b1-9457-0782a98ae5e6)
+
+Worker Update Confirmation
+This screenshot demonstrates the update functionality in the Worker Management screen. After selecting an existing worker, editing their details, and clicking the "עדכן עובד" ("Update Worker") button:
+
+A confirmation dialog appears with the message "Worker updated successfully."
+
+This ensures users receive immediate feedback about the success of the operation.
+
+The success dialog improves user experience by validating the action, confirming the backend database was updated accordingly.
 
 
+![image](https://github.com/user-attachments/assets/397be2e9-b6ef-43a7-9a22-2dde5a7a30d1)
 
 
+Worker Addition Confirmation
+This screenshot illustrates the successful addition of a new worker in the Worker Management screen. After filling in all required fields (ID, first name, last name, salary, seniority, status, and bonus) and clicking the "הוסף עובד" ("Add Worker") button:
+
+A confirmation message appears: "Worker added successfully."
+
+This ensures the new worker’s data has been saved to the database and the user receives immediate positive feedback.
+
+The interface supports real-time validation and updates to the table view upon worker addition.
+
+![image](https://github.com/user-attachments/assets/c167dee4-7dee-4de4-9478-ce209e7cb850)
+
+Worker Deletion Confirmation
+This screenshot demonstrates the process of deleting a worker from the Worker Management screen. After selecting an existing worker's ID and clicking the "מחק עובד" ("Delete Worker") button:
+
+A confirmation message appears: "Worker deleted successfully."
+
+This indicates that the worker’s record has been permanently removed from the system database.
+
+The data table refreshes to reflect the change, ensuring real-time feedback and data accuracy for the user.
+
+![image](https://github.com/user-attachments/assets/947768ab-ecc8-4ea6-ad7c-4f0d6cf31c9b)
 
 
+Customer Management Screen
+This screen allows users to manage customer information within the catering management system. It is accessed via the main entry screen by clicking the "ניהול לקוחות" ("Manage Customers") button.
+
+Key functionalities include:
+
+View: Displays a table of all customers, including their ID, name, phone number, email address, and physical address.
+
+Add Customer: Using the "הוסף לקוח" ("Add Customer") button, users can register new customers by filling in the fields at the top.
+
+Update Customer: Select an existing customer, edit their details in the input fields, and click "עדכן לקוח" ("Update Customer") to apply the changes.
+
+Delete Customer: Removes a customer from the system via the "מחק לקוח" ("Delete Customer") button.
+
+Refresh: Updates the table to reflect the most current data from the database.
+
+This module ensures that client information is easily accessible, editable, and consistently synchronized with the underlying PostgreSQL database.
+
+![image](https://github.com/user-attachments/assets/23da7539-d7a5-4d25-a6f7-615d8563b983)
+
+Customer Added Confirmation
+
+This screenshot demonstrates the successful addition of a new customer to the catering management system.
+
+Key features shown:
+
+A new customer (ID: 455) has been added with full details including name, phone number, email, and address.
+
+Upon clicking the "הוסף לקוח" ("Add Customer") button, a confirmation popup is displayed:
+"✔ Customer added successfully."
+
+The newly added customer immediately appears in the customer list below, indicating real-time synchronization with the PostgreSQL database.
+
+This feedback mechanism ensures users receive immediate confirmation of successful actions, enhancing the system’s usability and reliability.
+
+![image](https://github.com/user-attachments/assets/35bfe171-66d5-47b4-a365-5615f9cf62b7)
+
+Customer Update Confirmation
+
+This screenshot captures the process of updating an existing customer's details within the customer management screen.
+
+Highlights:
+
+The customer with ID 455 is being updated, with changes reflected in fields such as phone number, email, or address.
+
+Once the "עדכן לקוח" ("Update Customer") button is clicked, a confirmation message appears:
+"✔ Customer updated successfully."
+
+The confirmation dialog ensures the user receives immediate feedback about the success of the operation, improving transparency and user confidence.
+
+The updated information is instantly visible in the data table, confirming that the system is functioning correctly and connected to the live database.
+![image](https://github.com/user-attachments/assets/e5c8e5c0-33fc-499a-8456-b65f6cfceb9c)
+
+Customer Deletion Confirmation
+
+This screenshot displays the successful deletion of a customer record from the customer management screen.
+
+Details:
+
+The record of Customer455, previously visible in the form fields and table, has been removed.
+
+A confirmation dialog appears stating:
+"🗑 Customer deleted successfully."
+
+This ensures the user receives immediate visual feedback that the deletion was processed by the system.
+
+The deletion is also reflected in the table view, which refreshes automatically to show the updated list of customers. This reinforces data integrity and ease of use.
+
+![image](https://github.com/user-attachments/assets/3d70ee8f-575c-4441-a32f-27ed4baba047)
+
+Shift Count Query Screen
+
+This screen allows users to check how many shifts a specific worker is assigned to.
+
+Features:
+
+The screen is accessed from the main interface using the button labeled "📊 שאילתות ופרוצדורות".
+
+Users enter a worker_id in the input field.
+
+By clicking the "בדוק כמות משמרות" button, the system retrieves the number of scheduled shifts for the given worker, using a pre-defined SQL function.
+
+The interface is styled with a light pink background and bold, centered headers for clarity and visual consistency with the rest of the system.
+
+![image](https://github.com/user-attachments/assets/d12b7dba-b4ac-4132-9d52-b308a0571dff)
+
+Shift Count Check – Result Display
+
+This screenshot shows the result of querying the number of shifts assigned to a specific worker.
+
+The user entered worker_id = 111.
+
+Upon clicking the "Check Shifts" button, a confirmation dialog appears.
+
+The dialog message displays:
+"Worker number 111 has 2 shifts."
+
+This functionality is part of the system's procedures screen and reflects real-time data retrieved from the database using a backend SQL function.
+
+![image](https://github.com/user-attachments/assets/48bb94bf-447d-4736-a6ed-aa4d8f5fead2)
+
+Queries & Functions Screen
+This window is accessed via the "Queries and Procedures" button on the main menu screen.
+It allows the user to execute predefined SQL queries and stored procedures in the catering management system.
+
+Functionalities included:
+
+Total Orders per Customer: Displays the total number of orders placed by each customer.
+
+Total Salary by Status: After entering a worker status (e.g., "Active", "Inactive"), this query returns the total salary of all workers matching that status.
+
+Assign Worker to Shift: By entering a valid worker ID and shift ID, this function assigns the selected worker to the specified shift using a stored procedure.
+
+This interface provides a direct way to interact with complex backend logic (queries and procedures), in a user-friendly form.
+
+![image](https://github.com/user-attachments/assets/55889040-044c-4184-98ac-f8999ce6d357)
+
+Total Orders per Customer – Result Window
+
+Upon clicking the "Total Orders per Customer" button, the system executes a predefined SQL query that aggregates the number of orders and total spending for each customer.
+
+The result is displayed in a message window in the following format:
+Customer<ID> | Orders: <count> | Total: <sum>
+
+Customer41 | Orders: 5 | Total: 953.77
+Customer306 | Orders: 4 | Total: 898.53
+...
+This functionality is useful for summarizing customer engagement and identifying top-spending clients in the system.
+
+![image](https://github.com/user-attachments/assets/773da017-d25c-46a0-bb51-50294ae08e4a)
+
+Total Salary by Status – Result Window
+Upon clicking the "Total Salary by Status" button (after entering a valid status, e.g. "Active"), the system calculates the sum of all salaries for workers with that specific status.
+
+The result is shown in a message box in the following format:
+
+lua
+Copy
+Edit
+Total salary for status '<Status>': <TotalSum>
+For example:
+
+Total salary for status 'Active': 4823794.09
+This feature provides a quick financial overview of salary expenses filtered by worker status (e.g. Active, Inactive, etc.).
+![image](https://github.com/user-attachments/assets/f4786caf-75d9-44d4-b9aa-49a5989b3694)
 
 
+ Assign Worker to Shift
+This feature allows administrators to assign a worker to a specific shift using a stored procedure.
+
+How it works:
+
+The user inputs:
+
+Worker ID — an existing worker's ID from the database.
+
+Shift ID — an existing shift ID from the shift table.
+
+Upon clicking Assign Worker to Shift, the system executes the stored procedure assign_worker_to_shift(worker_id, shift_id).
+
+Behavior:
+
+✅ On success, a confirmation message is displayed (e.g., "Worker 111 assigned to shift 5000.").
+
+❌ If the shift ID does not exist in the shift table, an error message is shown due to the foreign key constraint in the scheduled table.
+
+Purpose:
+This function streamlines the scheduling process by programmatically linking workers to shifts based on business logic defined in the database.
+
+![image](https://github.com/user-attachments/assets/1aeca3b5-34dc-42d8-992e-a36300a75281)
 
 
 
