@@ -776,7 +776,18 @@ This function streamlines the scheduling process by programmatically linking wor
 
 ![image](https://github.com/user-attachments/assets/1aeca3b5-34dc-42d8-992e-a36300a75281)
 
+### Exit the System
+
+At the bottom of the interface, the **"יציאה מהמערכת" (Exit the System)** button is displayed.
+
+#### Behavior:
+🡆 Clicking this button immediately closes the current window and exits the application.
+
+#### Purpose:
+This feature allows users to safely and quickly log out or exit the system once they have completed their tasks.
 
 
+
+![image](https://github.com/user-attachments/assets/7be59d32-7d3d-44e4-8139-46742f44b279)
 
 
