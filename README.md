@@ -480,11 +480,41 @@ $$;
 
 
 ### Backup
-[90620252](https://github.com/ChayaGayer/database/blob/master/phae4/90620252)
+[90620252](https://github.com/Ch# Catering Management System 🍽️ 
+
+## 🟢 Application Overview
+This is a graphical database application for managing a **catering service**. It allows users to manage workers, customers, shift scheduling, and run queries and procedures using a user-friendly interface built with Python and Tkinter.
+
+---
+
+## 📁 Project Structure
+This repository contains:
+
+1. **gui_code/** – the full implementation of the graphical user interface.
+2. **instructions.txt** – a step-by-step guide for installing and running the system.
+3. **screenshots/** – screenshots of the system in action.
+4. **README.md** – this project report and documentation.
+
+---
+
+## 🧭 How to Run the Application
+### Requirements:
+- Python 3.x installed
+- PostgreSQL running with a database named `ITINEWDB`
+- Python packages:
+  - `psycopg2`
+  - `Pillow` (for image support)
+
+### Run:
+From the `gui_code/` directory, run:
+```bash
+python main.py
+ayaGayer/database/blob/master/phae4/90620252)
 
 
 
 
+# Phase E
 
 
 
