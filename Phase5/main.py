@@ -9,7 +9,7 @@ root.configure(bg="#ffeef2")  # רקע ורוד בהיר
 
 # --- לוגו ---
 try:
-    img = Image.open("logo.png")  # שימי את הקובץ הזה בשם הזה
+    img = Image.open("logo.png")  # 
     img = img.resize((160, 160))
     logo = ImageTk.PhotoImage(img)
     logo_label = Label(root, image=logo, bg="#ffeef2")
