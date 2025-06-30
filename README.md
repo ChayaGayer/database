@@ -720,7 +720,8 @@ Assign Worker to Shift: By entering a valid worker ID and shift ID, this functio
 
 This interface provides a direct way to interact with complex backend logic (queries and procedures), in a user-friendly form.
 
-![image](https://github.com/user-attachments/assets/55889040-044c-4184-98ac-f8999ce6d357)
+![image](https://github.com/user-attachments/assets/1dc73403-f7ab-467b-8b95-8100b0156a08)
+
 
 Total Orders per Customer – Result Window
 
@@ -735,6 +736,35 @@ Customer306 | Orders: 4 | Total: 898.53
 This functionality is useful for summarizing customer engagement and identifying top-spending clients in the system.
 
 ![image](https://github.com/user-attachments/assets/773da017-d25c-46a0-bb51-50294ae08e4a)
+
+
+Count Workers by Status – Result Window
+Upon clicking the "Count Workers by Status" button, the system executes an SQL query that groups all employees in the database by their wstatus field and counts the number of employees in each status category.
+
+The result is displayed in a message window in the following format:
+
+php-template
+Copy
+Edit
+Status: <StatusName> | Count: <NumberOfWorkers>
+For example:
+
+yaml
+Copy
+Edit
+Status: Active | Count: 460  
+Status: Not Active | Count: 351  
+Status: Completed | Count: 294  
+Status: temp | Count: 144  
+Status: Vacation | Count: 44  
+Status: Status3 | Count: 40  
+Status: Status2 | Count: 38  
+Status: Status1 | Count: 28
+This functionality is useful for HR and management to quickly assess the distribution of employee statuses across the organization, enabling better workforce planning and status-based analysis.
+
+
+![image](https://github.com/user-attachments/assets/a233fc8f-b4e4-4e36-bf0b-0fc0d215f8aa)
+
 
 Total Salary by Status – Result Window
 Upon clicking the "Total Salary by Status" button (after entering a valid status, e.g. "Active"), the system calculates the sum of all salaries for workers with that specific status.
