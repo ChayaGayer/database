@@ -31,6 +31,25 @@ def total_orders_by_customer():
     except Exception as e:
         messagebox.showerror("שגיאה", str(e))
 
+# === שאילתה 2: מספר עובדים לפי סטטוס ===
+def count_workers_by_status():
+    try:
+        conn = connect()
+        cur = conn.cursor()
+        cur.execute('''
+            SELECT wstatus, COUNT(*) 
+            FROM worker
+            GROUP BY wstatus
+            ORDER BY COUNT(*) DESC
+        ''')
+        rows = cur.fetchall()
+        output = "\n".join([f"Status: {row[0]} | Count: {row[1]}" for row in rows])
+        messagebox.showinfo("Worker Count by Status", output)
+        cur.close()
+        conn.close()
+    except Exception as e:
+        messagebox.showerror("שגיאה", str(e))
+
 # === פונקציה: סך שכר לפי סטטוס ===
 def salary_by_status():
     try:
@@ -63,14 +82,14 @@ def assign_worker():
 # === GUI ===
 root = tk.Tk()
 root.title("Queries & Functions")
-root.geometry("450x380")
+root.geometry("480x420")
 root.configure(bg="#fcdde4")  # רקע ורוד בהיר
 
 # פונקציות עיצוב
 def styled_button(master, text, command):
     return tk.Button(master, text=text, command=command,
                      font=("Arial", 12, "bold"),
-                     bg="black", fg="white", width=30,
+                     bg="black", fg="white", width=35,
                      relief="raised", bd=4)
 
 def styled_label(master, text):
@@ -80,17 +99,20 @@ def styled_entry(master, width=20):
     return tk.Entry(master, font=("Arial", 12), width=width)
 
 # כפתור 1: סך ההזמנות ללקוח
-styled_button(root, "Total Orders per Customer", total_orders_by_customer).pack(pady=15)
+styled_button(root, "Total Orders per Customer", total_orders_by_customer).pack(pady=10)
+
+# כפתור 2: מספר עובדים לפי סטטוס
+styled_button(root, "Count Workers by Status", count_workers_by_status).pack(pady=10)
 
 # שדה סטטוס עובד
 status_frame = tk.Frame(root, bg="#fcdde4")
 styled_label(status_frame, "Worker Status:").pack(side=tk.LEFT)
 status_entry = styled_entry(status_frame)
 status_entry.pack(side=tk.LEFT, padx=5)
-status_frame.pack(pady=5)
+status_frame.pack(pady=10)
 
-# כפתור 2: חישוב שכר לפי סטטוס
-styled_button(root, "Total Salary by Status", salary_by_status).pack(pady=15)
+# כפתור 3: חישוב שכר לפי סטטוס
+styled_button(root, "Total Salary by Status", salary_by_status).pack(pady=10)
 
 # שיוך עובד למשמרת
 assign_frame = tk.Frame(root, bg="#fcdde4")
@@ -102,9 +124,9 @@ styled_label(assign_frame, "Shift ID:").grid(row=0, column=2, padx=5)
 shift_id_entry = styled_entry(assign_frame, width=6)
 shift_id_entry.grid(row=0, column=3, padx=5)
 
-assign_frame.pack(pady=5)
+assign_frame.pack(pady=10)
 
-# כפתור 3: שיוך
-styled_button(root, "Assign Worker to Shift", assign_worker).pack(pady=20)
+# כפתור 4: שיוך עובד למשמרת
+styled_button(root, "Assign Worker to Shift", assign_worker).pack(pady=10)
 
 root.mainloop()
